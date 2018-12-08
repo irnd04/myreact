@@ -10,7 +10,8 @@ class PhoneInfo extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         // 성능최적화를 위해 객체를 새로만든다
-        // 배열 객체 주소에다가 푸쉬또는 애드등등..을 하는것이아님.
+        // 이함수를 쓰려면 비교를 해야하므로 이전 객체의 상태를 변경되지않게 
+        // 하는게 중요한듯 하다.
         if (this.state !== nextState)
             return true;
         return this.props.info !== nextProps.info;
